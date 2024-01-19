@@ -1,0 +1,103 @@
+html{
+    box-sizing: border-box;
+    height: 100%;
+    scroll-behavior: smooth;
+}
+
+*,
+*::before,
+*::after{
+    box-sizing: inherit;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    font-family: "Arial", sans-serif;
+    background-color: rgb(186, 210, 253);
+    align-items: center;
+    justify-items: center;
+    min-height: 100vh;
+
+    perspective: 800px;
+}
+
+img{
+    max-width: 100%;
+    height: auto;
+}
+
+.visually-hidden{
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    border: 0;
+    padding: 0;
+    clip: rect(0 0 0 0);
+    overflow: hidden;
+}
+
+.container{
+    display: flex;
+    flex-wrap: wrap;
+    width: 480px;
+    transform-style: preserve-3d;
+    
+    
+}
+
+.card{
+    border: 2px solid black;
+    border-radius: 5px;
+    cursor: pointer;
+    /* position: relative; */
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    transform-style: preserve-3d;
+    transform: rotateY(-180deg);
+    transition: transform 0.4s linear;
+}
+
+.card.show{
+ transform: rotateY(0deg);
+}
+
+.card  .front,
+.card  .back{
+  background-color: #fff;
+  backface-visibility: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 5px;
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+}
+
+
+
+.card .front{
+    z-index: 2;
+    transform: rotateY(0deg);
+}
+
+
+
+
+
+.card .back{
+    transform: rotateY(180deg) ;
+}
+.card .front i{
+    font-size: 35px;
+}
+
+
